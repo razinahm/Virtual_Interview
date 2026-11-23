@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <!-- Lets the app find the phone's speech recognizer (needed on Android 11+) -->
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService"/>
+        </intent>
+    </queries>
+
+    <application android:label="Interview Simulator" android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+        <activity android:name=".LoginActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignupActivity"/>
+        <activity android:name=".HomeActivity"/>
+        <activity android:name=".QualificationActivity"/>
+        <activity android:name=".SectorActivity"/>
+        <activity android:name=".InterviewActivity"/>
+        <activity android:name=".ResultActivity"/>
+    </application>
+</manifest>
